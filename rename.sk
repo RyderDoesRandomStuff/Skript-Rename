@@ -1,0 +1,39 @@
+command /rename [<text>]:
+	Permission: skript.rename
+	Description: Rename the item in your hand.
+	Usage: /rename <name>
+	Trigger:
+		if player's tool is not air:
+			if arg-1 is set:
+				set name of player's tool to colored arg-1
+			else:
+				message "&cYou didn't type a name for the item!"
+		else:
+			message "&cYou don't have any item in your hand!"
+			
+command /relore [<text>]:
+	Permission: skript.relore
+	Description: Redo the lore the item in your hand.
+	Usage: /relore <name>
+	Trigger:
+		if player's tool is not air:
+			if arg-1 is set:
+				set lore of player's tool to colored arg-1
+			else:
+				message "&cYou didn't type a lore for the item!"
+		else:
+			message "&cYou don't have any item in your hand!"
+			
+			
+command /reenchant [<enchantment type>]:
+	Permission: skript.Enchant
+	usage: /reenchant <enchantment type>
+	trigger:
+		if arg-1 is not set:
+			message "&cUsage: /reenchant <enchantment>"
+		else:
+			if player's tool is air:
+				message "&cYou don't have any item in your hand!"
+				
+			else:
+				enchant player's tool with arg-1
